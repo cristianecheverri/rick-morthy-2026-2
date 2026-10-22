@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiverso Explorer</title>
+  <link rel="stylesheet" href="css/tailwind.css">
+</head>
+<body class="min-h-dvh bg-slate-100 text-slate-900">
+
+  <!--
+    PASO 04 · Tarjeta: capa 3, estados
+    Qué cambia: group, transition, hover:, group-hover: y focus-visible:.
+    Compruébalo: Pasa el mouse por la tarjeta: sube y la imagen hace zoom. Llega al botón con
+    Tab: aparece el anillo.
+  -->
+
+  <main class="mx-auto max-w-6xl p-4">
+    <h1 class="mt-4 text-3xl font-bold md:text-4xl">Personajes de Rick and Morty</h1>
+    <p class="mt-1 text-slate-500">8 de 826 personajes · datos escritos a mano hasta la semana 8</p>
+
+    <h2 class="mt-6 mb-3 text-sm font-semibold tracking-wide text-slate-500 uppercase">Resultados</h2>
+    <!-- group: marca la tarjeta como "padre" para group-hover · hover:-translate-y-1: sube 4px · transition: lo anima -->
+    <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow max-w-xs group transition hover:-translate-y-1 hover:shadow-xl">
+      <!-- overflow-hidden (del paso 3) recorta la imagen cuando crece: por eso existía este div -->
+      <div class="overflow-hidden">
+        <!-- group-hover:scale-105: crece 5% cuando el mouse está sobre la TARJETA, no sobre la imagen -->
+        <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Rick Sanchez"
+            class="aspect-square w-full object-cover transition group-hover:scale-105">
+      </div>
+      <div class="flex flex-1 flex-col gap-2 p-4">
+        <h3 class="text-lg font-bold text-slate-900">Rick Sanchez</h3>
+        <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-700">● Vivo</span>
+        <p class="text-sm text-slate-500">Human · Earth (C-137)</p>
+        <!-- focus-visible: anillo de foco SOLO cuando se llega con teclado -->
+        <button type="button" class="mt-auto rounded-lg bg-indigo-600 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          Ver detalle
+        </button>
+      </div>
+    </article>
+  </main>
+
+  <!--
+    DATOS PARA EL PASO 5 (GET https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8)
+    id | name                      | status  | species | origin.name                   | location.name
+    1  | Rick Sanchez              | Alive   | Human   | Earth (C-137)                 | Citadel of Ricks
+    2  | Morty Smith               | Alive   | Human   | unknown                       | Citadel of Ricks
+    3  | Summer Smith              | Alive   | Human   | Earth (Replacement Dimension) | Earth (Replacement Dimension)
+    4  | Beth Smith                | Alive   | Human   | Earth (Replacement Dimension) | Earth (Replacement Dimension)
+    5  | Jerry Smith               | Alive   | Human   | Earth (Replacement Dimension) | Earth (Replacement Dimension)
+    6  | Abadango Cluster Princess | Alive   | Alien   | Abadango                      | Abadango
+    7  | Abradolf Lincler          | unknown | Human   | Earth (Replacement Dimension) | Testicle Monster Dimension
+    8  | Adjudicator Rick          | Dead    | Human   | unknown                       | Citadel of Ricks
+    image: https://rickandmortyapi.com/api/character/avatar/{id}.jpeg
+  -->
+</body>
+</html>

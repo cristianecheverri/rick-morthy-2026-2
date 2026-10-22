@@ -1,0 +1,12 @@
+{
+  "name": "semana-6",
+  "private": true,
+  "scripts": {
+    "dev": "tailwindcss -i ./src/entrada.css -o ./css/tailwind.css --watch",
+    "build": "tailwindcss -i ./src/entrada.css -o ./css/tailwind.css"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
